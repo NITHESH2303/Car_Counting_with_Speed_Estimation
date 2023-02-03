@@ -2,7 +2,7 @@
 
 # vehicle-counting-and-speed-estimation-yolo-sort-python
 
-This project uses YOLOv3 for Vehicle detection and SORT(Simple Online and Realtime Tracker) for vehicle tracking
+This project uses YOLOv3 for Vehicle detection.
 
 This project imlements the following tasks in the project: 
 
@@ -10,9 +10,6 @@ This project imlements the following tasks in the project:
 2. Lane segmentation
 3. Lane change detection
 4. Speed estimation
-5. Dumps all these details into a CSV file
-
-Note that there are 4 locations in the video and so the code(4 IFs), you can delete 3 and edit the first one according to your need.
 
 # To run the project:
 
@@ -52,13 +49,6 @@ This method makes some assumptions which are as follows:
 2. Atleast one vehicle is driving at the speed limit.
 
 --> We draw two lines on the frame perpendicular to the vehicle moving directon, then we find the minimim time taken by any car to cross these two lines(This car will be moving at the speed limit). Once we find he minimum time required for a car to pass these two lines, we use simple speed=distance/time formula to calculate the speed for rest of the cars.[ I know this wouldn't be perfect, but surely much more precise than the pixel mapping method]
-
-
-
-I will try to keep making commits to improve the speed detection of vehicles.
-Any pull request for improvement is highly welcomed.
-
-
 
 # References:
 
