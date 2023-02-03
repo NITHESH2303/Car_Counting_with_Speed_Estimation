@@ -247,9 +247,9 @@ while True:
         # apply non-maxima suppression to suppress weak, overlapping
         # bounding boxes
         idxs = cv2.dnn.NMSBoxes(boxes, confidences, args["confidence"], args["threshold"])
-        #print("idxs", idxs)
-        #print("boxes", boxes[i][0])
-        #print("boxes", boxes[i][1])
+        print("idxs", idxs)
+        print("boxes", boxes[i][0])
+        print("boxes", boxes[i][1])
         
         dets = []
         if len(idxs) > 0:
@@ -258,8 +258,8 @@ while True:
                 (x, y) = (boxes[i][0], boxes[i][1])
                 (w, h) = (boxes[i][2], boxes[i][3])
                 dets.append([x, y, x+w, y+h, confidences[i]])
-                #print(confidences[i])
-                #print(center[i])
+                print(confidences[i])
+                print(center[i])
         np.set_printoptions(formatter={'float': lambda x: "{0:0.3f}".format(x)})
         dets = np.asarray(dets)
         tracks = tracker.update(dets)
